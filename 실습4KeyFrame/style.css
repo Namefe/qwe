@@ -1,0 +1,954 @@
+/*
+	** 본인이 그리고 싶은 것을 자유롭게 그려주시면 됩니다.
+	애니메이션은 5가지 이상 만들어서 적용해주세요.
+
+	1. background색을 원하는 색으로 넣어주세요.
+
+	2. 새의 몸통을 원하는대로 꾸며주세요.
+	- 센터정렬하면서 중앙보다 살짝 더 아래 위치하게 해주세요.
+
+	3. 새의 눈을 꾸며주세요.
+	- 가상클래스를 이용하여 눈물 혹은 선글라스 등의 장식도 만들어주세요.
+
+	4. 입을 만들어주세요.
+
+	5. 날개를 만들어주세요.
+
+	6. 가상클래스를 이용하여 꼬리를 만들어주세요.
+
+	7. 애니메이션을 마음껏 걸어주세요.
+
+*/
+body{
+    background-color: rgba(25, 20, 53, 0.8);
+}
+
+.minions{
+    width:150px;
+    height:300px;
+    background-color: yellow;
+    position:absolute;
+    bottom:20%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 200px 200px 20% 20%;
+}
+.garden{
+    width:100%;
+    height:300px;
+    background-color: gray;
+    position: absolute;
+    bottom:0;
+    z-index: -9999;
+    border-top:20px solid black;
+    border-bottom:20px solid black;
+}
+
+.line1{
+    width:120px;
+    height:60px;
+    background-color: yellow;
+    position: absolute;
+    top:50%;
+    left:0;
+    margin-top:-50px;
+}
+.line2{
+    width:120px;
+    height:60px;
+    background-color: yellow;
+    position: absolute;
+    top:50%;
+    left:20%;
+    margin-top:-50px;
+}
+.line3{
+    width:100px;
+    height:60px;
+    background-color: yellow;
+    position: absolute;
+    top:50%;
+    left:40%;
+    margin-top:-50px;
+}
+.line4{
+    width:100px;
+    height:60px;
+    background-color: yellow;
+    position: absolute;
+    top:50%;
+    left:60%;
+    margin-top:-50px;
+}
+.line5{
+    width:100px;
+    height:60px;
+    background-color: yellow;
+    position: absolute;
+    top:50%;
+    right:20%;
+    margin-top:-50px;
+}
+.line6{
+    width:100px;
+    height:60px;
+    background-color: yellow;
+    position: absolute;
+    top:50%;
+    right:0;
+    margin-top:-50px;
+}
+.moon{
+    width:100px;
+    height:100px;
+    background-color: rgb(250, 246, 185);
+    border-radius: 100%;
+    position: absolute;
+    top:0;
+    right:0;
+    margin:50px;
+    animation: moon1 2s ease-in-out infinite alternate;
+}
+.crate1{
+    width:20px;
+    height:20px;
+    background-color: bisque;
+    border-radius: 80%;
+    position: absolute;
+    top:10%;
+    right:50%;
+}
+.crate2{
+    width:20px;
+    height:20px;
+    background-color: bisque;
+    border-radius: 80%;
+    position: absolute;
+    top:20%;
+    right:40%;
+}
+.crate3{
+    width:20px;
+    height:20px;
+    background-color: bisque;
+    border-radius: 80%;
+    position: absolute;
+    top:60%;
+    left:50%;
+}
+.short1{
+    width:50px;
+    border:1px solid black;
+    transform: rotate(90deg);
+    position: absolute;
+    top:-5%;
+    left:50%;
+    margin-left:-25px;
+    z-index: -999;
+}
+.short2{
+    width:50px;
+    border:1px solid black;
+    transform: rotate(80deg);
+    position: absolute;
+    top:-5%;
+    left:45%;
+    margin-left:-25px;
+    z-index: -999;
+
+}
+.short3{
+    width:50px;
+    border:1px solid black;
+    transform: rotate(110deg);
+    position: absolute;
+    top:-5%;
+    left:55%;
+    margin-left:-25px;
+    z-index: -999;
+
+}
+.short4{
+    width:50px;
+    border:1px solid black;
+    transform: rotate(120deg);
+    position: absolute;
+    top:-5%;
+    left:60%;
+    margin-left:-25px;
+    z-index: -999;
+
+}
+.short5{
+    width:50px;
+    border:1px solid black;
+    transform: rotate(70deg);
+    position: absolute;
+    top:-5%;
+    left:40%;
+    margin-left:-25px;
+    z-index: -999;
+
+}
+.left-eye{
+    width:60px;
+    height:30px;
+    background-color: white;
+    border-radius: 0 0 50px 50px;
+    position: absolute;
+    top:36%;
+    left:31%;
+    transform: translate(-50%,-50%);
+}
+.right-eye{
+    width:60px;
+    height:30px;
+    background-color: white;
+    border-radius: 0 0 75px 75px;
+    position: absolute;
+    top:36%;
+    left:70%;
+    transform: translate(-50%,-50%);
+}
+.left-eye1{
+    width:40px;
+    height:20px;
+    background-color: brown;
+    border-radius: 0 0 75px 75px;
+    position: absolute;
+    top:37%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-bottom: 2px solid black;
+}
+.right-eye1{
+    width:40px;
+    height:20px;
+    background-color: brown;
+    border-radius: 0 0 75px 75px;
+    position: absolute;
+    top:37%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-bottom: 2px solid black;
+
+}
+.left-eye2{
+    width:30px;
+    height:15px;
+    background-color: black;
+    border-radius: 0 0 75px 75px;
+    position: absolute;
+    top:25%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.right-eye2{
+    width:30px;
+    height:15px;
+    background-color: black;
+    border-radius: 0 0 75px 75px;
+    position: absolute;
+    top:25%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.left-eye3{
+    width:5px;
+    height:5px;
+    background-color:white;
+    border-radius:100%;
+    position: absolute;
+    top:20%;
+    left:77%;
+    transform: translate(-50%,-50%);
+}
+.right-eye3{
+    width:5px;
+    height:5px;
+    background-color:white;
+    border-radius:100%;
+    position: absolute;
+    top:20%;
+    left:22%;
+    transform: translate(-50%,-50%);
+}
+.left-glass{
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    border:10px solid rgb(224, 224, 224);
+    position: absolute;
+    top:32%;
+    left:30%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+}
+.right-glass{
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    border:10px solid rgb(224, 224, 224);
+    position: absolute;
+    top:32%;
+    left:70%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+}
+.glass2{
+    width:20px;
+    height:20px;
+    background-color: black;
+    position: absolute;
+    top:34%;
+    left:6%;
+    transform: translate(-50%, -50%);
+}
+.glass3{
+    width:20px;
+    height:20px;
+    background-color: black;
+    position: absolute;
+    top:34%;
+    right:-7%;
+    transform: translate(-50%, -50%);
+}
+.mouse{
+    width:56px;
+    height:25px;
+    background-color: black;
+    border-radius: 0 0 75px 75px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.teeth1{
+    width:14px;
+    height:9px;
+    background-color: white;
+    border-radius:0 0 75px 75px;
+}
+.teeth2{
+    width:14px;
+    height:9px;
+    background-color: white;
+    border-radius:0 0 75px 75px;
+    position: absolute;
+    top:0;
+    left:25%;
+}
+.teeth3{
+    width:14px;
+    height:9px;
+    background-color: white;
+    border-radius:0 0 75px 75px;
+    position: absolute;
+    top:0;
+    right:25%;
+}
+.teeth4{
+    width:14px;
+    height:9px;
+    background-color: white;
+    border-radius:0 0 75px 75px;
+    position: absolute;
+    top:0;
+    right:0;
+}
+.cloth{
+    width:150px;
+    height:100px;
+    background-color: rgb(89, 89, 231);
+    position: absolute;
+    bottom:-5px;
+    border-radius: 0 0 10px 10px;
+}
+.left-belt{
+    width:60px;
+    height:20px;
+    background-color: rgb(89,89,231);
+    transform: rotateZ(60deg);
+    position: absolute;
+    top:-30px;
+    left:-10px;
+    z-index: 2;
+}
+.right-belt{
+    width:60px;
+    height:20px;
+    background-color: rgb(89,89,231);
+    transform: rotateZ(-60deg);
+    position: absolute;
+    top:-30px;
+    right:-10px;
+    z-index: 2;
+
+}
+.poket{
+    width:80px;
+    height:40px;
+    background-color: rgb(67, 67, 236);
+    border-radius: 10px 10px 50px 50px;
+    position: absolute;
+    border:1px solid blue;
+    top:20px;
+    left:50%;
+    margin-left: -40px;
+}
+.left-button{
+    width:10px;
+    height:10px;
+    background-color: black;
+    border-radius: 100%;
+    margin:10px;
+}
+.right-button{
+    width:10px;
+    height:10px;
+    background-color: black;
+    border-radius: 100%;
+    margin:10px;
+    position: absolute;
+    right:0;
+    top:0;
+}
+.left-hand{
+    width:70px;
+    height:20px;
+    background-color: yellow;
+    position: absolute;
+    top:60%;
+    left:-40%;
+    transform: rotateZ(-50deg);
+    animation: move 5s ease-in-out infinite none;
+    transform-origin:right;
+    z-index: 50;
+}
+.right-hand1{
+    width:40px;
+    height:20px;
+    background-color: yellow;
+    position: absolute;
+    top:65%;
+    right:-18%;
+    transform: rotateZ(50deg);
+    z-index: 5;
+}
+.right-hand2{
+    width:70px;
+    height:20px;
+    background-color: yellow;
+    position: absolute;
+    top:60%;
+    right:-50%;
+    transform: rotateZ(-42deg);
+}
+.left-g{
+    width:30px;
+    height:30px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    top:-5px;
+    left:-15px;
+}
+.right-g{
+    width:30px;
+    height:30px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    top:50%;
+    right:-53%;
+}
+.left-foot{
+    width:30px;
+    height:50px;
+    background-color: rgb(89,89,231);
+    position: absolute;
+    bottom:-50px;
+    left:10px;
+}
+.right-foot{
+    width:30px;
+    height:50px;
+    background-color: rgb(89,89,231);
+    position: absolute;
+    bottom: -50px;
+    right:10px;
+}
+.left-s{
+    width:60px;
+    height:30px;
+    background-color: black;
+    border-top-left-radius: 75px;
+    position: absolute;
+    bottom:-30px;
+    left:-30px;
+}
+.right-s{
+    width:60px;
+    height:30px;
+    background-color: black;
+    border-top-right-radius: 75px;
+    position: absolute;
+    bottom: -30px;
+    right:-30px;
+}
+.remote{
+    width:60px;
+    height:100px;
+    background-color: rgb(61, 59, 59);
+    position: absolute;
+    top:58%;
+    left:43%;
+    z-index: -50;
+}
+.bt1{
+    width:10px;
+    height:10px;
+    background-color: red;
+    position: absolute;
+    top:20%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    animation: button 5s ease-in infinite alternate;
+
+}
+.bt2{
+    width:10px;
+    height:10px;
+    background-color: red;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.bt3{
+    width:10px;
+    height:10px;
+    background-color: red;
+    position: absolute;
+    top:80%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.rotate{
+    width:400px;
+    height:200px;
+    background-color: gold;
+    position: absolute;
+    top:30%;
+    left:15%;
+}
+.header{
+    width:0;
+    height:0;
+    border-bottom: 200px solid rgb(88, 88, 88);
+    border-left: 200px solid transparent;
+    border-right:200px solid transparent;
+    position: absolute;
+    top:-100%;
+    left:0;
+}
+.window{
+    width:80px;
+    height:80px;
+    background-color: white;
+    border-radius: 100%;
+    position: absolute;
+    top:30%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.door{
+    width:70px;
+    height:100px;
+    background-color: chocolate;
+    border-radius: 100px 100px 0 0;
+    position: absolute;
+    bottom: 0;
+    right:0;
+    margin-right: 20px;
+}
+.lock{
+    width:20px;
+    height:20px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    top:50%;
+    right:5px;
+
+}
+.car{
+    width:400px;
+    height:370px;
+    background-color: silver;
+    border-radius:40px 0 0 40px;
+    position: absolute;
+    bottom: 300px;
+    right:-500px;
+   	animation: super 8s ease-in-out infinite normal;
+}
+.k3{
+    width:0;
+    height:0;
+    border-bottom: 370px solid silver;
+    border-left: 0px solid transparent;
+    border-right:400px solid transparent;
+    position: absolute;
+    top:0;
+    right:-400px;
+}
+.k5{
+    display: inline-block;
+    width:0;
+    height:0;
+    border-bottom: 200px solid silver;
+    border-left: 100px solid transparent;
+    border-right:100px solid transparent;
+    transform: rotateZ(270deg);
+    position: absolute;
+    top:-100px;
+    right:-250px;
+}
+.k7{
+    width:100px;
+    height:20px;
+    background-color: black;
+    transform: rotate(140deg);
+    position: absolute;
+    top:50px;
+    right:-150px;
+}
+.logo{
+    width:150px;
+    height:150px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color:yellow;
+    margin:0 auto;
+    text-align: center;
+    line-height: 150px;
+    font-size: 30px;
+}
+.tire1{
+    width:50px;
+    height:50px;
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom:-25px;
+    left:60px;
+    border:5px solid black;
+}
+.tire2{
+    width:50px;
+    height:50px;
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom:-25px;
+    left:140px;
+    border:5px solid black;
+}
+.tire3{
+    width:50px;
+    height:50px;
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom:-25px;
+    left:220px;
+    border:5px solid black;
+}
+.tire4{
+    width:50px;
+    height:50px;
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom:-25px;
+    left:300px;
+    border:5px solid black;
+}
+.tire5{
+    width:50px;
+    height:50px;
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom:-25px;
+    left:380px;
+    border:5px solid black;
+}
+.tire6{
+    width:50px;
+    height:50px;
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom:-25px;
+    left:460px;
+    border:5px solid black;
+}
+.tire7{
+    width:50px;
+    height:50px;
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom:-25px;
+    left:540px;
+    border:5px solid black;
+}
+.tire8{
+    width:50px;
+    height:50px;
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom:-25px;
+    left:620px;
+    border:5px solid black;
+}
+.tire9{
+    width:50px;
+    height:50px;
+    background-color: gray;
+    border-radius: 100%;
+    position: absolute;
+    bottom:-25px;
+    left:700px;
+    border:5px solid black;
+}
+.bomb{
+    width:500px;
+    height:300px;
+    position: absolute;
+    top:-180px;
+    left:-100px;
+  	/*animation: super2 8s ease-out infinite normal;*/
+
+}
+.rocket{
+    scale:0.4;
+    rotate: 225deg;
+    position: absolute;
+    bottom:-60px;
+    left:-120px;
+   	animation: shoot1 8s ease-out infinite none;
+}
+.mack{
+    width:100px;
+    height:10px;
+    background-color: black;
+    rotate: 90deg;
+
+}
+.rocket2{
+    scale:0.4;
+    rotate:225deg;
+    position: absolute;
+    bottom:-40px;
+    left:180px;
+   	animation: shoot2 8s ease-out infinite none;
+
+}
+.mack1{
+    width:150px;
+    height:10px;
+    background-color: black;
+    rotate: 90deg;
+    position: absolute;
+    top:-30px;
+    left:250px;
+
+}
+.rocket3{
+    scale:0.4;
+    rotate:225deg;
+    position: absolute;
+    bottom:60px;
+    left:35px;
+  	animation: shoot3 8s ease-out infinite normal;
+
+}
+.mack2{
+    width:250px;
+    height:10px;
+    background-color: black;
+    rotate: 90deg;
+    position: absolute;
+    top:-90px;
+    left:70px;
+
+}
+.rocket4{
+    scale:0.4;
+    rotate:270deg;
+    position: absolute;
+    bottom:200px;
+    left:90px;
+  	animation: shoot4 8s ease-out infinite normal;
+
+}
+.mack3{
+    width:400px;
+    height:10px;
+    background-color: black;
+    rotate: 90deg;
+    position: absolute;
+    top:-150px;
+    left:80px;
+
+}
+.rocket5{
+    scale:0.4;
+    rotate:90deg;
+    position: absolute;
+    top:-500px;
+    left:170px;
+ 	animation: shoot5 8s ease-out infinite normal;
+
+}
+.mack4{
+    width:500px;
+    height:10px;
+    background-color: black;
+    rotate: 90deg;
+    position: absolute;
+    top:-180px;
+    left:100px;
+
+}
+@keyframes move{
+    0%{}
+    10%{
+        transform: rotate(30deg);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: rotate(30deg) scale(1);
+    }
+}
+@keyframes button{
+    0%{
+        background-color: red;
+    }
+    60%{
+        background-color: yellow;
+    }
+    100%{
+        background-color: red;
+    }
+}
+@keyframes super {
+    0%{
+        }
+    50%{
+       transform: translate(-1000px);
+    }
+    80%{
+        transform: translate(-1003px);
+    }
+    100%{
+       transform: translate(-5000px);
+    }
+}
+@keyframes super2 {
+    0%{
+        }
+    50%{
+       transform: translate(-1000px);
+       transition-duration: 5s;
+    }
+    80%{
+        transform: translate(-1003px);
+        transition-delay: 5s;
+    }
+    100%{
+       transform: scale(0);
+    }
+}
+@keyframes shoot1{
+    0%{}
+
+    50%{
+        transform: rotateZ(90deg);
+    }
+    80%{
+        transform:rotateZ(30deg) translateY(-1000px) translateX(1000px);
+    }
+    100%{
+        transform: translateX(-10px) translateY(50px) scale(0.2);
+    }
+}
+@keyframes shoot2{
+    0%{}
+
+    50%{
+        transform:rotateZ(90deg);
+    }
+    80%{
+        transform:rotateZ(30deg) translateY(-1000px) translateX(1000px); 
+    }
+    100%{
+        transform:translateX(3500px) translateY(-2100px) scale(0.01);
+    }
+}
+@keyframes shoot3{
+    0%{}
+    50%{
+        transform:rotateZ(90deg) translateY(50px);
+    }
+    80%{
+        transform:rotateZ(30deg) translateY(-1000px) translateX(1000px); 
+    }
+    100%{
+        transform:translateX(100px) translateY(10px) scale(0.2) ;
+    }
+}
+@keyframes shoot4{
+    0%{}
+    50%{
+        transform:rotateZ(90deg); 
+    }
+    80%{
+        transform:rotateZ(10deg) translateY(-500px) translateX(200px);
+    }
+    100%{
+        transform:translateX(-20px) translateY(-40px) scale(0.1);
+    }
+}
+@keyframes shoot5{
+    0%{}
+
+    50%{
+        transform:rotateZ(90deg) translateY(50px) ; 
+    }
+    80%{
+        transform:translateX(-500px) translateY(500px);
+    }
+    100%{
+        transform:translateX(30px) translateZ(40px) scale(0.1);
+    }
+}
+@keyframes moon1{
+    0%{}
+    50%{
+        background-color: blue;
+        transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+    100%{
+        scale:2
+    }
+}
